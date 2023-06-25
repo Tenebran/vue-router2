@@ -2,6 +2,7 @@
   <header class="header">
     <a href="" class="header__logo"></a>
     <input
+      v-if="search"
       type="search"
       placeholder="Поиск продуктов..."
       :value="modelValue"
@@ -9,13 +10,13 @@
     />
     <span>{{ props.query }}</span>
     <nav class="header__nav">
-      <span class="header__page" @click="setModal('m1', true)">Добавить Товар</span>
+      <span class="header__page">Добавить Товар</span>
     </nav>
   </header>
 </template>
 
 <script setup>
-const props = defineProps(['modelValue', 'setModal'])
+const props = defineProps(['modelValue', 'search'])
 </script>
 
 <style lang="scss" scoped>
