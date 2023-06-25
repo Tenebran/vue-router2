@@ -4,7 +4,5 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import VueCreditCardValidation from 'vue-credit-card-validation'
 import router from './router'
 
-const app = createApp(App)
-app.use(router)
-app.use(VueCreditCardValidation)
+const app = createApp(App).use(router).use(VueCreditCardValidation)
 app.mount('#app')
