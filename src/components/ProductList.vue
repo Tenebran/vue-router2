@@ -1,6 +1,5 @@
 <template>
   <MyHeader :modelValue="query" @update:modelValue="query = $event" :search="true" />
-  <input type="search" placeholder="Поиск продуктов..." v-model="query" />
 
   <ul class="products">
     <ProductItem
@@ -11,6 +10,7 @@
       :image="list.image"
       :price="list.price"
       :rating="list.rating"
+      :idProduct="list.id"
     />
   </ul>
 </template>
@@ -41,7 +41,7 @@ const queryProducts = computed(() => {
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .products {
   display: flex;
   flex-wrap: wrap;

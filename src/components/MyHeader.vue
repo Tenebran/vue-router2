@@ -10,7 +10,9 @@
     />
     <span>{{ props.query }}</span>
     <nav class="header__nav">
-      <span class="header__page">Добавить Товар</span>
+      <router-link class="header__link" to="/">Магазин</router-link>
+      <router-link class="header__link" to="/addProduct">Добавить товар</router-link>
+      <router-link class="header__link" to="/pay">Корзина</router-link>
     </nav>
   </header>
 </template>
@@ -33,6 +35,17 @@ const props = defineProps(['modelValue', 'search'])
   justify-content: space-between;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
   padding: 0 20px;
+
+  &__link {
+    text-decoration: none !important;
+    color: rgb(59, 59, 59);
+    margin: 0 10px 0;
+    font-weight: 700;
+    font-size: 18px;
+    &:hover {
+      color: #212121;
+    }
+  }
 
   &__page {
     font: 700 32px sans-serif;

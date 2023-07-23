@@ -12,12 +12,25 @@
           рейтин: {{ props.rating.rate }}
         </div>
       </div>
-      <button class="products__button" @click="() => onSelectProduct({ id: 1 })">Buy</button>
+      <button
+        class="products__button"
+        @click="() => onBuyProducts(props.idProduct, props.image, props.title)"
+      >
+        Buy
+      </button>
     </div>
   </li>
 </template>
 
 <script setup>
+const onBuyProducts = (id, img, title) => {
+  const selectProduct = JSON.parse(localStorage.getItem('onBuyProducts'))
+  localStorage.setItem(
+    'onBuyProducts',
+    JSON.stringify(selectProduct ? [...selectProduct, { id, img, title }] : [{ id, img, title }])
+  )
+}
+
 const props = defineProps([
   'title',
   'description',
@@ -25,7 +38,7 @@ const props = defineProps([
   'price',
   'count',
   'rating',
-  'onSelectProduct'
+  'idProduct'
 ])
 </script>
 

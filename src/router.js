@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ProductList from './components/ProductList.vue'
-import PaymentRouter from './components/PaymentRouter.vue'
+import PaymentProduct from './components/PaymentProduct.vue'
+import AddProduct from './components/AddProduct.vue'
 
 const routes = [
   {
@@ -11,7 +12,12 @@ const routes = [
   {
     path: '/pay',
     name: 'pay',
-    component: PaymentRouter
+    component: PaymentProduct
+  },
+  {
+    path: '/addProduct',
+    name: 'addProduct',
+    component: AddProduct
   }
 ]
 
