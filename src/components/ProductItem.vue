@@ -23,11 +23,17 @@
 </template>
 
 <script setup>
+import { v4 } from 'uuid'
+
 const onBuyProducts = (id, img, title) => {
   const selectProduct = JSON.parse(localStorage.getItem('onBuyProducts'))
   localStorage.setItem(
     'onBuyProducts',
-    JSON.stringify(selectProduct ? [...selectProduct, { id, img, title }] : [{ id, img, title }])
+    JSON.stringify(
+      selectProduct
+        ? [...selectProduct, { id, img, title, productId: v4() }]
+        : [{ id, img, title, productId: v4() }]
+    )
   )
 }
 
